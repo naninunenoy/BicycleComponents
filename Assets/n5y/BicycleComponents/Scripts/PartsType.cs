@@ -4,6 +4,8 @@
         Frame = 0,
         /// <summary> ハンドル </summary>
         Handle,
+        /// <summary> ブレーキ </summary>
+        Brake,
         /// <summary> サドル </summary>
         Saddle,
         /// <summary> 前輪 </summary>
