@@ -1,5 +1,7 @@
-﻿namespace n5y.BicycleComponents.Constraint {
+﻿using UnityEngine;
+
+namespace n5y.BicycleComponents.Constraint {
     public interface IConstrainter {
-        void Rotate(float angle);
+        void ApplyRotate(float angle, Vector3 axis);
     }
 }

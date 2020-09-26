@@ -1,5 +1,9 @@
-﻿namespace n5y.BicycleComponents.Constraint {
+﻿using System;
+using UnityEngine;
+
+namespace n5y.BicycleComponents.Constraint {
     public interface IConstraintee {
-        void OnParentRotated(float angle);
+        void Rotate(Quaternion quaternion);
+        Action<Quaternion> OnRotated { get; }
     }
 }
