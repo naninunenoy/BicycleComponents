@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using n5y.BicycleComponents.Constraint;
+﻿using n5y.BicycleComponents.Constraint;
 using UnityEngine;
 
 namespace n5y.BicycleComponents {
@@ -29,15 +27,18 @@ namespace n5y.BicycleComponents {
             leftPedalCrankArmJointRotator = new TransformRotator(leftPedalCrankArmJoint);
 
             pedalJointConstraint =
-                new PedalJointRotationConstraint(rightPedalCrankArmJointRotator, leftPedalCrankArmJoint);
-            rearWheelConstraint = new RearWheelRotationConstraint(leftPedalCrankArmJointRotator, rearWheel);
-            frontWheelConstraint = new FrontWheelRotationConstraint(handleRotator, rearWheelRotator, frontWheel);
+                new PedalJointRotationConstraint(rightPedalCrankArmJointRotator, leftPedalCrankArmJointRotator);
+            rearWheelConstraint = new RearWheelRotationConstraint(rightPedalCrankArmJointRotator, rearWheelRotator);
+            frontWheelConstraint = new FrontWheelRotationConstraint(handleRotator, rearWheelRotator, frontWheelRotator);
         }
 
         void Update() {
             pedalJointConstraint.ApplyConstraint();
             rearWheelConstraint.ApplyConstraint();
             frontWheelConstraint.ApplyConstraint();
+
+            handle.Rotate(new Vector3(0, 0.5F, 0));
+            rightPedalCrankArmJoint.Rotate(new Vector3(1, 0, 0));
         }
     }
 }

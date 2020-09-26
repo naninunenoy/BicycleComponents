@@ -4,21 +4,20 @@ namespace n5y.BicycleComponents.Constraint {
     public class FrontWheelRotationConstraint : IRotationConstraint {
         readonly IRotator handle;
         readonly IRotator rear;
-        readonly Transform destination;
+        readonly IRotator destination;
+        readonly Quaternion defaultRotation;
+        readonly Quaternion defaultRotationInv;
 
-        public FrontWheelRotationConstraint(IRotator handle, IRotator rear, Transform destination) {
+        public FrontWheelRotationConstraint(IRotator handle, IRotator rear, IRotator destination) {
             this.handle = handle;
             this.rear = rear;
             this.destination = destination;
+            defaultRotation = destination.Rotation;
+            defaultRotationInv = Quaternion.Inverse(defaultRotation);
         }
 
         public void ApplyConstraint() {
-            var handleAngle = -handle.Rotation.eulerAngles.y;
-            var wheelAngle = rear.Rotation.eulerAngles.x;
-            var handleRot = Quaternion.AngleAxis(handleAngle, destination.right);
-            var wheelRot = Quaternion.AngleAxis(wheelAngle, destination.up);
-            var euler = (handleRot * wheelRot* Constants.GlobalToWheel).eulerAngles;
-            destination.rotation = Quaternion.Euler(euler);
+            destination.Rotation =  handle.Rotation * (defaultRotationInv * (defaultRotation * rear.Rotation));
         }
     }
 }
