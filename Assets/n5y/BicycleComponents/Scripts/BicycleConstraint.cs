@@ -36,9 +36,6 @@ namespace n5y.BicycleComponents {
             pedalJointConstraint.ApplyConstraint();
             rearWheelConstraint.ApplyConstraint();
             frontWheelConstraint.ApplyConstraint();
-
-            handle.Rotate(new Vector3(0, 0.5F, 0));
-            rightPedalCrankArmJoint.Rotate(new Vector3(1, 0, 0));
         }
     }
 }
