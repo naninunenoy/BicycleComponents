@@ -1,4 +1,6 @@
-﻿using n5y.BicycleComponents.Constraint;
+﻿using System;
+using System.Collections.Generic;
+using n5y.BicycleComponents.Constraint;
 using UnityEngine;
 
 namespace n5y.BicycleComponents {
@@ -9,27 +11,33 @@ namespace n5y.BicycleComponents {
         [SerializeField] Transform rightPedalCrankArmJoint = default;
         [SerializeField] Transform leftPedalCrankArmJoint = default;
 
-        IConstrainter handleConstrainter;
-        IConstrainter rightPedalCrankArmJointConstrainter;
-        IConstrainter rearPedalConstrainter;
-        IConstraintee frontWheelConstraintee;
-        IConstraintee rearWheelConstraintee;
-        IConstraintee leftPedalCrankArmJointConstraintee;
+        IRotator handleRotator;
+        IRotator frontWheelRotator;
+        IRotator rearWheelRotator;
+        IRotator rightPedalCrankArmJointRotator;
+        IRotator leftPedalCrankArmJointRotator;
+
+        IRotationConstraint pedalJointConstraint;
+        IRotationConstraint frontWheelConstraint;
+        IRotationConstraint rearWheelConstraint;
 
         void Awake() {
-            frontWheelConstraintee = new TransformConstraintee(frontWheel);
-            rearWheelConstraintee = new TransformConstraintee(rearWheel);
-            leftPedalCrankArmJointConstraintee = new TransformConstraintee(leftPedalCrankArmJoint);
-            handleConstrainter = new HandleConstrainter(frontWheelConstraintee);
-            rightPedalCrankArmJointConstrainter = new PedalConstrainter(leftPedalCrankArmJointConstraintee, rearWheelConstraintee);
-            rearPedalConstrainter = new WheelConstrainter(frontWheelConstraintee);
+            handleRotator = new TransformRotator(handle);
+            frontWheelRotator = new TransformRotator(frontWheel);
+            rearWheelRotator = new TransformRotator(rearWheel);
+            rightPedalCrankArmJointRotator = new TransformRotator(rightPedalCrankArmJoint);
+            leftPedalCrankArmJointRotator = new TransformRotator(leftPedalCrankArmJoint);
+
+            pedalJointConstraint =
+                new PedalJointRotationConstraint(rightPedalCrankArmJointRotator, leftPedalCrankArmJoint);
+            rearWheelConstraint = new RearWheelRotationConstraint(leftPedalCrankArmJointRotator, rearWheel);
+            frontWheelConstraint = new FrontWheelRotationConstraint(handleRotator, rearWheelRotator, frontWheel);
         }
 
         void Update() {
-            handleConstrainter.ApplyRotate(handle.eulerAngles.y, handle.up);
-            rightPedalCrankArmJointConstrainter.ApplyRotate(
-                rightPedalCrankArmJoint.eulerAngles.x, rightPedalCrankArmJoint.right);
-            rearPedalConstrainter.ApplyRotate(rearWheel.eulerAngles.x, rearWheel.up);
+            pedalJointConstraint.ApplyConstraint();
+            rearWheelConstraint.ApplyConstraint();
+            frontWheelConstraint.ApplyConstraint();
         }
     }
 }
