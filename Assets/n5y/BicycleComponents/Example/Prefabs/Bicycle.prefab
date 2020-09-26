@@ -289,6 +289,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handle: {fileID: 7877520576450537421}
   frontWheel: {fileID: 7877520576459841733}
+  rearWheel: {fileID: 7877520577031100097}
+  rightPedalCrankArmJoint: {fileID: 7877520575787292748}
+  leftPedalCrankArmJoint: {fileID: 7877520577295775846}
 --- !u!1 &7877520576450537420
 GameObject:
   m_ObjectHideFlags: 0
