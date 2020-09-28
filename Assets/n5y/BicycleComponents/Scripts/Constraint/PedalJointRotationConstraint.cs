@@ -7,7 +7,7 @@ namespace n5y.BicycleComponents.Constraint {
         readonly Quaternion defaultRotation;
 
         public PedalJointRotationConstraint(IRotator pedal, IRotator destination) {
-            this.pedal = new RotationDiff(pedal);;
+            this.pedal = new RotationDiff(pedal);
             this.destination = destination;
             defaultRotation = destination.Rotation;
         }

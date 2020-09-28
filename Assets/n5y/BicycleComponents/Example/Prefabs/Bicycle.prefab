@@ -292,6 +292,8 @@ MonoBehaviour:
   rearWheel: {fileID: 7877520577031100097}
   rightPedalCrankArmJoint: {fileID: 7877520575787292748}
   leftPedalCrankArmJoint: {fileID: 7877520577295775846}
+  rightPedalJoint: {fileID: 7877520577504342320}
+  leftPedalJoint: {fileID: 7877520576615122104}
 --- !u!1 &7877520576450537420
 GameObject:
   m_ObjectHideFlags: 0
