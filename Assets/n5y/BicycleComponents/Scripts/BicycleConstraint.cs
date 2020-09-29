@@ -53,5 +53,15 @@ namespace n5y.BicycleComponents {
             frontWheelConstraint.ApplyConstraint();
             pedalHorizontalConstraint.ApplyConstraint();
         }
+
+        public void PushPedal(float jointAngularVelocity) {
+            rightPedalCrankArmJoint.Rotate(jointAngularVelocity, 0.0F, 0.0F);
+        }
+
+        public void SteerHandle(float angle) {
+            var euler = handle.rotation.eulerAngles;
+            euler.y = angle;
+            handle.rotation = Quaternion.Euler(euler);
+        }
     }
 }

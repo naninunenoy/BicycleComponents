@@ -30,11 +30,11 @@ namespace n5y.BicycleComponents {
         }
 
         public void PushPedal(float angle) {
-            //constraint.PushPedal(angle);
+            constraint.PushPedal(angle);
         }
 
         public void SteerHandle(float angle) {
-            //constraint.SteerHandle(angle);
+            constraint.SteerHandle(angle);
         }
     }
 }

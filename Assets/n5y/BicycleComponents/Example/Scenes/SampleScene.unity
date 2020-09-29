@@ -442,9 +442,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 606964047}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 360
+  m_MaxValue: 5
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -570,6 +570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ddb7b4a3e1e1614093d9e030f95db6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bicycle: {fileID: 812762299}
   speedSlider: {fileID: 305625788}
   speedText: {fileID: 532935477}
   handleSlider: {fileID: 147297879}
@@ -1040,6 +1041,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &812762299 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5899944916114367726, guid: 59377d18fc1a74e4ca5bb473346f5e5b, type: 3}
+  m_PrefabInstance: {fileID: 7877520576162948174}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c12c5aa536c442baf59f5cf32a0400c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &858645606
 GameObject:
   m_ObjectHideFlags: 0

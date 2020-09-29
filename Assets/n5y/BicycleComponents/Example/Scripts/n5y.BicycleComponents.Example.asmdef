@@ -1,3 +1,15 @@
-﻿{
-	"name": "n5y.BicycleComponents.Example"
+{
+    "name": "n5y.BicycleComponents.Example",
+    "references": [
+        "GUID:df58a3f5dceefac4d94a20e9b4f98118"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
