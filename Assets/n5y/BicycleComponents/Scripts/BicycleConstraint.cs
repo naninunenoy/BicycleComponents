@@ -12,6 +12,7 @@ namespace n5y.BicycleComponents {
         [SerializeField] Transform leftPedalJoint = default;
 
         RotationDiff bicycle;
+        IRotator bicycleRotator;
         IRotator handleRotator;
         IRotator frontWheelRotator;
         IRotator rearWheelRotator;
@@ -26,7 +27,8 @@ namespace n5y.BicycleComponents {
         IRotationConstraint pedalHorizontalConstraint;
 
         void Awake() {
-            bicycle = new RotationDiff(new TransformRotator(transform));
+            bicycleRotator = new TransformRotator(transform);
+            bicycle = new RotationDiff(bicycleRotator);
             handleRotator = new TransformRotator(handle);
             frontWheelRotator = new TransformRotator(frontWheel);
             rearWheelRotator = new TransformRotator(rearWheel);
@@ -42,7 +44,7 @@ namespace n5y.BicycleComponents {
             frontWheelConstraint =
                 new FrontWheelRotationConstraint(bicycle, handleRotator, rearWheelRotator, frontWheelRotator);
             pedalHorizontalConstraint =
-                new PedalHorizontalConstraint(leftPedalJointRotator, rightPedalJointRotator, Vector3.down);
+                new PedalHorizontalConstraint(bicycleRotator, leftPedalJointRotator, rightPedalJointRotator);
         }
 
         void Update() {

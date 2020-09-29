@@ -1,23 +1,24 @@
-﻿using UnityEditorInternal;
+﻿using System;
 using UnityEngine;
 
 namespace n5y.BicycleComponents.Constraint {
     public class PedalHorizontalConstraint : IRotationConstraint {
-        readonly IRotator left;
-        readonly IRotator right;
-        readonly Vector3 gravityDirection;
+        readonly IRotator body;
+        readonly IRotator leftPedal;
+        readonly IRotator rightPedal;
 
-        public PedalHorizontalConstraint(IRotator left, IRotator right, Vector3 gravityDirection) {
-            this.left = left;
-            this.right = right;
-            this.gravityDirection = gravityDirection;
+        public PedalHorizontalConstraint(IRotator body, IRotator leftPedal, IRotator rightPedal) {
+            this.body = body;
+            this.leftPedal = leftPedal;
+            this.rightPedal = rightPedal;
         }
 
+
         public void ApplyConstraint() {
-            var yaw = right.Rotation.eulerAngles.y;
-            right.Rotation = Quaternion.AngleAxis(yaw, gravityDirection);
-            yaw = left.Rotation.eulerAngles.y;
-            left.Rotation = Quaternion.AngleAxis(yaw, gravityDirection);
+            var euler = body.Rotation.eulerAngles;
+            var rot = Quaternion.Euler(0.0F, euler.y, euler.z);
+            leftPedal.Rotation = rot;
+            rightPedal.Rotation = rot;
         }
     }
 }
