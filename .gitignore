@@ -61,3 +61,7 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+# 3rd Assets
+Assets/Sir_bike/*
+!Assets/Sir_bike/README.md
+
