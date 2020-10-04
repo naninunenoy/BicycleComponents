@@ -1,4 +1,5 @@
 ﻿using n5y.BicycleComponents.Parts;
+using n5y.BicycleComponents.Constraint;
 using UnityEngine;
 
 namespace n5y.BicycleComponents {
@@ -8,7 +9,7 @@ namespace n5y.BicycleComponents {
         [SerializeField] Transform saddle = default;
         [SerializeField] Transform leftPedal = default;
         [SerializeField] Transform rightPedal = default;
-        [SerializeField] BicycleConstraint constraint = default;
+        [SerializeField] BicycleFullConstraint fullConstraint = default;
 
         TransformParts handleLeftParts;
         public IParts HandleLeft => handleLeftParts;
@@ -30,11 +31,11 @@ namespace n5y.BicycleComponents {
         }
 
         public void PushPedal(float angle) {
-            constraint.PushPedal(angle);
+            fullConstraint.PushPedal(angle);
         }
 
         public void SteerHandle(float angle) {
-            constraint.SteerHandle(angle);
+            fullConstraint.SteerHandle(angle);
         }
     }
 }

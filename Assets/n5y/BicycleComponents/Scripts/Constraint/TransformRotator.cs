@@ -5,8 +5,10 @@ namespace n5y.BicycleComponents.Constraint {
         readonly Transform transform;
         public TransformRotator(Transform transform) => this.transform = transform;
         public Quaternion Rotation {
-            get => transform.rotation;
-            set => transform.rotation = value;
+            get => transform == null ? Quaternion.identity : transform.rotation;
+            set {
+                if (transform != null) transform.rotation = value;
+            }
         }
     }
 }

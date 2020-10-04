@@ -527,6 +527,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 358933677}
   m_CullTransparentMesh: 0
+--- !u!114 &423603225 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6598168160912359912, guid: f27fdaca8fce52c479b5e5cfaa04f3ee, type: 3}
+  m_PrefabInstance: {fileID: 6598168160758066673}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c12c5aa536c442baf59f5cf32a0400c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &444044117
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,7 +567,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &444044119
 MonoBehaviour:
@@ -570,7 +581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ddb7b4a3e1e1614093d9e030f95db6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bicycle: {fileID: 812762299}
+  bicycle: {fileID: 423603225}
   speedSlider: {fileID: 305625788}
   speedText: {fileID: 532935477}
   handleSlider: {fileID: 147297879}
@@ -947,7 +958,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
@@ -1041,17 +1052,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!114 &812762299 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5899944916114367726, guid: 59377d18fc1a74e4ca5bb473346f5e5b, type: 3}
-  m_PrefabInstance: {fileID: 7877520576162948174}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c12c5aa536c442baf59f5cf32a0400c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &858645606
 GameObject:
   m_ObjectHideFlags: 0
@@ -1338,7 +1338,7 @@ RectTransform:
   - {fileID: 1819801317}
   - {fileID: 858645607}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1687,6 +1687,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1841578462}
   m_CullTransparentMesh: 0
+--- !u!1001 &6598168160758066673
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6598168160912328519, guid: f27fdaca8fce52c479b5e5cfaa04f3ee, type: 3}
+      propertyPath: m_Name
+      value: SirBike
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598168160912759655, guid: f27fdaca8fce52c479b5e5cfaa04f3ee, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598168160912759655, guid: f27fdaca8fce52c479b5e5cfaa04f3ee, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598168160912759655, guid: f27fdaca8fce52c479b5e5cfaa04f3ee, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598168160912759655, guid: f27fdaca8fce52c479b5e5cfaa04f3ee, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598168160912759655, guid: f27fdaca8fce52c479b5e5cfaa04f3ee, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598168160912759655, guid: f27fdaca8fce52c479b5e5cfaa04f3ee, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598168160912759655, guid: f27fdaca8fce52c479b5e5cfaa04f3ee, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598168160912759655, guid: f27fdaca8fce52c479b5e5cfaa04f3ee, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598168160912759655, guid: f27fdaca8fce52c479b5e5cfaa04f3ee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598168160912759655, guid: f27fdaca8fce52c479b5e5cfaa04f3ee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598168160912759655, guid: f27fdaca8fce52c479b5e5cfaa04f3ee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f27fdaca8fce52c479b5e5cfaa04f3ee, type: 3}
 --- !u!1001 &7877520576162948174
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1701,6 +1758,10 @@ PrefabInstance:
     - target: {fileID: 7877520576406932942, guid: 59377d18fc1a74e4ca5bb473346f5e5b, type: 3}
       propertyPath: m_Name
       value: Bicycle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7877520576406932942, guid: 59377d18fc1a74e4ca5bb473346f5e5b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7877520576406932943, guid: 59377d18fc1a74e4ca5bb473346f5e5b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1732,7 +1793,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7877520576406932943, guid: 59377d18fc1a74e4ca5bb473346f5e5b, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7877520576406932943, guid: 59377d18fc1a74e4ca5bb473346f5e5b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

@@ -5,7 +5,7 @@ namespace n5y.BicycleComponents.Constraint {
         readonly IRotator rotator;
         readonly Quaternion DefaultInv;
         public readonly Quaternion Default;
-        public Quaternion Current => rotator.Rotation;
+        public Quaternion Current => rotator?.Rotation ?? Quaternion.identity;
         public Quaternion Diff => Current * DefaultInv;
 
         public RotationDiff(IRotator rotator) {

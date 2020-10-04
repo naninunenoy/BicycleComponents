@@ -1,8 +1,7 @@
-﻿using n5y.BicycleComponents.Constraint;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace n5y.BicycleComponents {
-    public class BicycleConstraint : MonoBehaviour {
+namespace n5y.BicycleComponents.Constraint {
+    public class BicycleFullConstraint : MonoBehaviour {
         [SerializeField] Transform handle = default;
         [SerializeField] Transform frontWheel = default;
         [SerializeField] Transform rearWheel = default;
@@ -10,6 +9,8 @@ namespace n5y.BicycleComponents {
         [SerializeField] Transform leftPedalCrankArmJoint = default;
         [SerializeField] Transform rightPedalJoint = default;
         [SerializeField] Transform leftPedalJoint = default;
+        [SerializeField] bool offHandleConstraint = default;
+        [SerializeField] bool offOppositePedalConstraint = default;
 
         RotationDiff bicycle;
         IRotator bicycleRotator;
@@ -42,13 +43,13 @@ namespace n5y.BicycleComponents {
             rearWheelConstraint =
                 new RearWheelRotationConstraint(rightPedalCrankArmJointRotator, rearWheelRotator);
             frontWheelConstraint =
-                new FrontWheelRotationConstraint(bicycle, handleRotator, rearWheelRotator, frontWheelRotator);
+                new FrontWheelRotationConstraint(bicycle, handleRotator, rearWheelRotator, frontWheelRotator, offHandleConstraint);
             pedalHorizontalConstraint =
                 new PedalHorizontalConstraint(bicycleRotator, leftPedalJointRotator, rightPedalJointRotator);
         }
 
         void Update() {
-            pedalJointConstraint.ApplyConstraint();
+            if (!offOppositePedalConstraint) pedalJointConstraint.ApplyConstraint();
             rearWheelConstraint.ApplyConstraint();
             frontWheelConstraint.ApplyConstraint();
             pedalHorizontalConstraint.ApplyConstraint();
